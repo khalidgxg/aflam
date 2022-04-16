@@ -11,12 +11,20 @@ class Episode extends Model
     use HasFactory;
 
     /**
-     * Get the season that owns the Episode
+     * Get the season that  owns the Episode
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function season(): BelongsTo
     {
         return $this->belongsTo(Season::class);
+    }
+
+    /**
+     * Get all of the episode's likes.
+     */
+    public function likes()
+    {
+        return $this->morphMany(Like::class, 'likeable');
     }
 }

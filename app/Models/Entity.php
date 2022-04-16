@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
@@ -33,8 +34,16 @@ class Entity extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function season(): HasMany
+    public function seasons(): HasMany
     {
         return $this->hasMany(Season::class);
+    }
+
+    /**
+     * Get all of the entity's likes.
+     */
+    public function likes()
+    {
+        return $this->morphMany(Like::class, 'likeable');
     }
 }
