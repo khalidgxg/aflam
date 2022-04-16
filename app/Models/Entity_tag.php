@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Entity_tag extends Model
 {
     use HasFactory;
+    protected $table='entities_tags';
 }

@@ -11,7 +11,7 @@ class Category extends Model
     use HasFactory;
     protected $table = 'categories';
 
-    public function Entity(): HasMany
+    public function entity(): HasMany
     {
         return $this->hasMany(Entity::class);
     }

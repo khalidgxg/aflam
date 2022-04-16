@@ -15,7 +15,7 @@ class Tag extends Model
  *
  * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
  */
-public function Entity(): BelongsToMany
+public function entities(): BelongsToMany
 {
     return $this->belongsToMany(Entity::class, 'entities_tags', 'tag_id', 'entity_id');
 }
