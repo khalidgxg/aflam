@@ -2,10 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\Season;
-use App\Models\User;
-use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,13 +14,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::factory(10)->create();
-        $this->call([
-            TagSeeder::class,
-            CategorySeeder::class,
-            EntitySeeder::class,
-            SeasonSeeder::class,
-            EpisodeSeeder::class
-        ]);
+        // \App\Models\User::factory(10)->create();
     }
 }
