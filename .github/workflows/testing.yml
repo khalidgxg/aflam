@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Check branch name
         run: |
-          if [[ ${{ github.ref }} != 'refs/heads/develop' && ${{ github.ref }} == 'refs/heads/testing' ]]; then
+          if [[ "${{ github.ref }}" != 'refs/heads/develop' && "${{ github.ref }}" == 'refs/heads/testing' ]]; then
             echo "Merging into testing branch is not allowed. Only merges from 'develop' branch are allowed."
             exit 1
           fi
